@@ -22,7 +22,6 @@ int validateSort(int value[], int start, int end) {
 	value[right] = temp;
 	return right;
 }
-
 void quickSort(int value[],int start,int end) {
 	int pivot = 0;
 	if (start < end) {

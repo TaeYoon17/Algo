@@ -19,7 +19,6 @@ void mergeRecursion(int arr[], int buffer[], int start, int end, int middle) {
 		}
 		k++;
 	}
-	
 	for (i; i <= middle; i++) buffer[k++] = arr[i];
 	for (j; j <= end; j++) buffer[k++] = arr[j];
 	for (i = start; i <= end; i++) arr[i] = buffer[i];
