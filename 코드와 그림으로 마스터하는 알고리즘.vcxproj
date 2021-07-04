@@ -140,20 +140,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="3_01.c" />
-    <ClCompile Include="hashsearch.c" />
-    <ClCompile Include="hashsearch_chain.c" />
-    <ClCompile Include="linkedlist.c" />
     <ClCompile Include="병합정렬.c" />
     <ClCompile Include="선택정렬.c" />
     <ClCompile Include="퀵 정렬.c" />
-    <ClCompile Include="해시\3_02.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="hashdef.h" />
-    <ClInclude Include="hashsearch_chain.h" />
-    <ClInclude Include="heashsearch.h" />
-    <ClInclude Include="lindedlist.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

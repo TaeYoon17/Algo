@@ -24,34 +24,5 @@
     <ClCompile Include="퀵 정렬.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="linkedlist.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="3_01.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="해시\3_02.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="hashsearch.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="hashsearch_chain.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="hashdef.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="hashsearch_chain.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="heashsearch.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="lindedlist.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
