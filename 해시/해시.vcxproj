@@ -139,16 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\3_01.c" />
-    <ClCompile Include="..\hashsearch.c" />
-    <ClCompile Include="..\hashsearch_chain.c" />
-    <ClCompile Include="..\linkedlist.c" />
+    <ClInclude Include="hashdef.h" />
+    <ClInclude Include="hashsearch_chain.h" />
+    <ClInclude Include="heashsearch.h" />
+    <ClInclude Include="lindedlist.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\hashdef.h" />
-    <ClInclude Include="..\hashsearch_chain.h" />
-    <ClInclude Include="..\heashsearch.h" />
-    <ClInclude Include="..\lindedlist.h" />
+    <ClCompile Include="3_01.c" />
+    <ClCompile Include="hashsearch.c" />
+    <ClCompile Include="hashsearch_chain.c" />
+    <ClCompile Include="linkedlist.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -15,13 +15,13 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="병합정렬.c">
+    <ClCompile Include="정렬\병합정렬.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="선택정렬.c">
+    <ClCompile Include="정렬\선택정렬.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="퀵 정렬.c">
+    <ClCompile Include="정렬\퀵 정렬.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
