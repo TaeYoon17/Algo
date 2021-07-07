@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "정렬", "코드와 그림�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "해시", "해시\해시.vcxproj", "{52731F07-786D-4E45-931C-9F864D35640B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "균형 검색 트리", "균형 검색 트리\균형 검색 트리.vcxproj", "{DE6118A0-E2F9-4CF5-8F85-635C3498CFBC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,16 @@ Global
 		{52731F07-786D-4E45-931C-9F864D35640B}.Release|x64.Build.0 = Release|x64
 		{52731F07-786D-4E45-931C-9F864D35640B}.Release|x86.ActiveCfg = Release|Win32
 		{52731F07-786D-4E45-931C-9F864D35640B}.Release|x86.Build.0 = Release|Win32
+		{DE6118A0-E2F9-4CF5-8F85-635C3498CFBC}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{DE6118A0-E2F9-4CF5-8F85-635C3498CFBC}.Debug|x64.ActiveCfg = Debug|x64
+		{DE6118A0-E2F9-4CF5-8F85-635C3498CFBC}.Debug|x64.Build.0 = Debug|x64
+		{DE6118A0-E2F9-4CF5-8F85-635C3498CFBC}.Debug|x86.ActiveCfg = Debug|Win32
+		{DE6118A0-E2F9-4CF5-8F85-635C3498CFBC}.Debug|x86.Build.0 = Debug|Win32
+		{DE6118A0-E2F9-4CF5-8F85-635C3498CFBC}.Release|Any CPU.ActiveCfg = Release|Win32
+		{DE6118A0-E2F9-4CF5-8F85-635C3498CFBC}.Release|x64.ActiveCfg = Release|x64
+		{DE6118A0-E2F9-4CF5-8F85-635C3498CFBC}.Release|x64.Build.0 = Release|x64
+		{DE6118A0-E2F9-4CF5-8F85-635C3498CFBC}.Release|x86.ActiveCfg = Release|Win32
+		{DE6118A0-E2F9-4CF5-8F85-635C3498CFBC}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

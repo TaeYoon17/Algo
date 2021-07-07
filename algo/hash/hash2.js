@@ -5,7 +5,6 @@ const Slot=class{
         this.value=value;
     }
 }
-
 const LinkedListNode=class{
     constructor(slot){
         this.slot=slot;
@@ -34,20 +33,7 @@ const LinkedList=class{
             tempNode.next=newNode;
         }
         this.currentCount++;
-    }/*
-    removeNode(key){
-        let tempNode=this.headerNode.next;
-        let beforeNode=this.headerNode;
-        for(let i=0; i<this.currentCount; i++){
-            if(beforeNode.slot.key===key){
-                beforeNode.next=tempNode.next;
-                break;
-            }
-            beforeNode=tempNode;
-            tempNode=tempNode.next;
-        }
-        if(i===this.currentCount) throw "잘못된 키";
-    }*/
+    }
     removeNode(index){
         let tempNode=this.headerNode.next;
         let beforeNode=this.headerNode;
@@ -78,9 +64,8 @@ const LinkedList=class{
         }
     }
 }
-const Chaining=class extends LinkedList{
+const Chaining=class{
     constructor(size){
-        super();
         this.currentSize=0;
         this.bucketSize=size;
         this.HashBucket=new Array(size);
@@ -102,9 +87,7 @@ const Chaining=class extends LinkedList{
             throw "잘못된 인덱스";
         }
         const [Node,index]=this.HashBucket[bucketIndex].searchNode(key);
-        console.log("Index",index);
         this.HashBucket[bucketIndex].removeNode(index);
-        //this.HashBucket[bucketIndex].removeNode(key);
         this.currentSize--;
     }
     search(key){
