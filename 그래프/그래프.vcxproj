@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{de6118a0-e2f9-4cf5-8f85-635c3498cfbc}</ProjectGuid>
-    <RootNamespace>균형검색트리</RootNamespace>
+    <ProjectGuid>{da6d2e92-3748-4590-84c7-5cec8f4a9cad}</ProjectGuid>
+    <RootNamespace>그래프</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,14 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="blinkedstack.h" />
-    <ClInclude Include="btree.h" />
-    <ClInclude Include="btreedef.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="btree.c" />
-    <ClCompile Include="blinkedstack.c" />
-    <ClCompile Include="구현.c" />
+    <ClCompile Include="splitList.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

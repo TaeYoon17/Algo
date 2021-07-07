@@ -15,24 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="btree.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="btreedef.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="blinkedstack.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="btree.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="blinkedstack.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="구현.c">
+    <ClCompile Include="splitList.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
