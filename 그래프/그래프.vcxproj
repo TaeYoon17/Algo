@@ -139,16 +139,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="graphBFS.c" />
     <ClCompile Include="graphDFS.c" />
     <ClCompile Include="GraphLinkedList.c" />
     <ClCompile Include="linkedgraph.c" />
     <ClCompile Include="linkedlist.c" />
     <ClCompile Include="skipList.c" />
+    <ClCompile Include="visitStack.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="graphBFS.h" />
     <ClInclude Include="graphDFS.h" />
     <ClInclude Include="linkedgraph.h" />
     <ClInclude Include="linkedlist.h" />
+    <ClInclude Include="visitStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

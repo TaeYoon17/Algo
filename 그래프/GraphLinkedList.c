@@ -1,10 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "linkedgraph.h"
-#include "graphDFS.h"
-void traverseBFS(LinkedGraph*graph,LinkedList*Node,int startVertex){
-	
-}
+#include "visitStack.h"
+
+
 
 int main() {
 	LinkedGraph* graph = createLinkedGraph(DIRECT_TYPE, 6);
@@ -19,5 +18,6 @@ int main() {
 	addEdge(graph, 4, 5, 3);
 	addEdge(graph, 5, 3, 6);
 	displayGraph(graph);
-	traverseDFS(graph,2);
+	//traverseDFS(graph,2);
+	traverseBFS(graph, 2);
 }

@@ -30,6 +30,12 @@
     <ClCompile Include="graphDFS.c">
       <Filter>리소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="visitStack.c">
+      <Filter>리소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="graphBFS.c">
+      <Filter>리소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linkedlist.h">
@@ -39,6 +45,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="graphDFS.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="visitStack.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="graphBFS.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
