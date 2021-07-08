@@ -10,6 +10,7 @@ LinkedList* createLinkedList() {
 		return NULL;
 	}
 	memset(pReturn, 0, sizeof(LinkedList));
+	pReturn->headerNode.data.toNodeID = -1;
 	return pReturn;
 }
 
@@ -18,9 +19,9 @@ graphEdge* getLinkedListData(LinkedList* list, int position) {
 	int i = 0;
 
 	LinkedListNode* currentNode = &(list->headerNode);
-	for (i = 0; i <= position; i++) {
-		currentNode = currentNode->next;
-	}
+		for (i = 0; i <= position; i++) {
+			currentNode = currentNode->next;
+		}
 	if (currentNode != NULL) {
 		ret = &(currentNode->data);
 	}
@@ -38,18 +39,8 @@ int addLinkedListData(LinkedList* list, int position, graphEdge data) {
 		return -1;
 	}
 	newNode->data = data;
-	for (i = 0; i < position; i++) {
-		graphEdge tempData = currentNode->data;
-		if (tempData.toNodeID == data.toNodeID) {
-			printf("같은 노드 방향 간선이 이미 존재함!");
-			return -1;
-		}
+	while (currentNode->next != NULL&&currentNode->next->data.toNodeID<data.toNodeID) {
 		currentNode = currentNode->next;
-	}
-	graphEdge tempData = currentNode->data;
-	if (tempData.toNodeID == data.toNodeID) {
-		printf("같은 노드 방향 간선이 이미 존재함!");
-		return -1;
 	}
 	newNode->next = currentNode->next;
 	currentNode->next = newNode;
@@ -66,4 +57,16 @@ int removeLinkedListData(LinkedList* list, int position) {
 	free(delNode);
 	list->currentCount--;
 	return 1;
+}
+
+void deleteLinkedList(LinkedList* pList) {
+	LinkedListNode* pDelNode = NULL;
+	LinkedListNode* pPreNode = pList->headerNode.next;
+	while (pPreNode != NULL) {
+		pDelNode = pPreNode;
+		pPreNode = pPreNode->next;
+		free(pDelNode);
+	}
+
+	free(pList);
 }

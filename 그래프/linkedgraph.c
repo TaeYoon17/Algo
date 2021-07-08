@@ -40,7 +40,6 @@ int checkVertexValid(LinkedGraph* graph, int node) {
 	if (graph != NULL && 0 <= node && node < graph->nodeCount) ret = 1;
 	return ret;
 }
-
 int addEdgeInternal(LinkedGraph* graph, int fromNode, int toNode, int weight) {
 	int ret = 0;
 	if (checkVertexValid(graph, fromNode) && checkVertexValid(graph, toNode)) {
@@ -78,7 +77,7 @@ int removeEdgeInternal(LinkedGraph* graph, int fromNode, int toNode) {
 	return ret;
 }
 int addEdge(LinkedGraph* graph, int fromNode, int toNode, int weight) {
-	int ret = 0;
+	int ret = -1;
 	ret = addEdgeInternal(graph, fromNode, toNode, weight);
 	if (ret == 0 && graph->graphType == UNDIRECT_TYPE) {
 		ret = addEdgeInternal(graph, toNode, fromNode, weight);
@@ -88,8 +87,55 @@ int addEdge(LinkedGraph* graph, int fromNode, int toNode, int weight) {
 int removeEdge(LinkedGraph* graph, int fromNode, int toNode) {
 	int ret = 0;
 	ret = removeEdgeInternal(graph, fromNode, toNode);
-	if (ret == 0 && graph->graphType == 1) {
+	if (ret == 0 && graph->graphType == UNDIRECT_TYPE) {
 		ret = removeEdgeInternal(graph, toNode, fromNode);
 	}
 	return ret;
+}
+graphEdge* getEdge(LinkedGraph* graph, int fromNode, int toNode) {
+	graphEdge* pReturn = NULL;
+	int i = 0;
+	if (graph!=NULL&&checkVertexValid(graph,fromNode) && checkVertexValid(graph,toNode)) {
+		LinkedList* tempList = graph->ppAdjEdge[fromNode];
+		int listLength = tempList->currentCount;
+		for (i = 0; i < listLength; i++) {
+			graphEdge* tempEdge=getLinkedListData(tempList,i);
+			if (tempEdge != NULL && tempEdge->toNodeID == toNode) {
+				pReturn = tempEdge;
+				break;
+			}
+		}
+	}
+	return pReturn;
+}
+void displayGraph(LinkedGraph* graph) {
+	int i=0,j=0,count=0;
+	if (graph == NULL) {
+		printf("그래프가 없음!!\n");
+		return;
+	}
+	count = graph->nodeCount;
+	for (i = 0; i < count; i++) {
+		for (j = 0; j < count; j++) {
+			graphEdge* currentEdge = getEdge(graph,i, j);
+			if (currentEdge != NULL) {
+				printf(" %d", currentEdge->toNodeID);
+			}
+			else {
+				printf(" X");
+			}
+		}
+		printf("\n");
+	}
+}
+void deleteGraph(LinkedGraph* pGraph) {
+	int i = 0;
+
+	if (pGraph != NULL) {
+		for (i = 0; i < pGraph->nodeCount; i++) {
+			deleteLinkedList(pGraph->ppAdjEdge[i]);
+		}
+		if (pGraph->ppAdjEdge != NULL) free(pGraph->ppAdjEdge);
+		free(pGraph);
+	}
 }

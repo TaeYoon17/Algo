@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="graphDFS.c" />
     <ClCompile Include="GraphLinkedList.c" />
     <ClCompile Include="linkedgraph.c" />
     <ClCompile Include="linkedlist.c" />
     <ClCompile Include="skipList.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="graphDFS.h" />
     <ClInclude Include="linkedgraph.h" />
     <ClInclude Include="linkedlist.h" />
   </ItemGroup>

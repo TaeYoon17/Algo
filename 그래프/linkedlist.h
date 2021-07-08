@@ -17,5 +17,5 @@ LinkedList* createLinkedList();
 graphEdge* getLinkedListData(LinkedList* list, int position);
 int addLinkedListData(LinkedList* list, int position, graphEdge data);
 int removeLinkedListData(LinkedList* list, int position);
-
+void deleteLinkedList(LinkedList *list);
 #endif

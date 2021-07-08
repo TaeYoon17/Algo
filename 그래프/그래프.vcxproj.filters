@@ -27,12 +27,18 @@
     <ClCompile Include="linkedgraph.c">
       <Filter>리소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="graphDFS.c">
+      <Filter>리소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linkedlist.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="linkedgraph.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="graphDFS.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
