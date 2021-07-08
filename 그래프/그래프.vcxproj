@@ -139,7 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="splitList.c" />
+    <ClCompile Include="GraphLinkedList.c" />
+    <ClCompile Include="linkedgraph.c" />
+    <ClCompile Include="linkedlist.c" />
+    <ClCompile Include="skipList.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="linkedgraph.h" />
+    <ClInclude Include="linkedlist.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
