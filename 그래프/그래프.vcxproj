@@ -141,7 +141,7 @@
   <ItemGroup>
     <ClCompile Include="graphBFS.c" />
     <ClCompile Include="graphDFS.c" />
-    <ClCompile Include="GraphLinkedList.c" />
+    <ClCompile Include="graphMain.c" />
     <ClCompile Include="linkedgraph.c" />
     <ClCompile Include="linkedlist.c" />
     <ClCompile Include="skipList.c" />

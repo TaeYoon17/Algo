@@ -18,7 +18,7 @@
     <ClCompile Include="skipList.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="GraphLinkedList.c">
+    <ClCompile Include="graphMain.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="linkedlist.c">

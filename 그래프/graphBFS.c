@@ -20,7 +20,7 @@ void enqueueVX(QueueVertex* qu, int data) {
 int dequeueVX(QueueVertex* qu) {
 	int ret = 0;
 	if (isEmptyQueuVX(qu)) {
-		printf("isEmpty\n");
+		return -1;
 	}
 	else {
 		ret = qu->arr[qu->head + 1];
@@ -67,7 +67,7 @@ void traverseBFS(LinkedGraph* graph, int startVertex) {
 				}
 			}
 			vx = dequeueVX(qu);
-		} while (!isFullStack(stack));
+		} while (!isFullStack(stack)&&vx!=-1);
 	}
 	else {
 		printf("해당 리스트는 데이터가 없음\n");

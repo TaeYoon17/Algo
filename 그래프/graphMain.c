@@ -11,7 +11,7 @@ int main() {
 	addEdge(graph, 0, 2, 4);
 	addEdge(graph, 1, 2, 1);
 	addEdge(graph, 2, 0, 4);
-	addEdge(graph, 2, 3, 7);
+	//addEdge(graph, 2, 3, 7);
 	addEdge(graph, 3, 2, 5);
 	addEdge(graph, 3, 4, 2);
 	addEdge(graph, 3, 5, 6);
@@ -19,5 +19,5 @@ int main() {
 	addEdge(graph, 5, 3, 6);
 	displayGraph(graph);
 	//traverseDFS(graph,2);
-	traverseBFS(graph, 2);
+	traverseBFS(graph, 0);
 }
