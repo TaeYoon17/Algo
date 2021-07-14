@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "graphDFS.h";
+#include "graphDFS.h"
 
 void _traverseDFS(LinkedGraph* graph, LinkedList* list, StackVX* stack) {
 	int i = 0;

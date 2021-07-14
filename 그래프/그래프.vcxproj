@@ -144,6 +144,7 @@
     <ClCompile Include="graphMain.c" />
     <ClCompile Include="linkedgraph.c" />
     <ClCompile Include="linkedlist.c" />
+    <ClCompile Include="single_source_sp.c" />
     <ClCompile Include="skipList.c" />
     <ClCompile Include="visitStack.c" />
   </ItemGroup>
@@ -152,6 +153,7 @@
     <ClInclude Include="graphDFS.h" />
     <ClInclude Include="linkedgraph.h" />
     <ClInclude Include="linkedlist.h" />
+    <ClInclude Include="single_source_sp.h" />
     <ClInclude Include="visitStack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

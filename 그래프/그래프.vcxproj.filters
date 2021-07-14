@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="리소스 파일\BFS/DFS">
+      <UniqueIdentifier>{78e0d84e-436a-46b0-b1f7-b4934b15b5e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\BFS/DFS">
+      <UniqueIdentifier>{99230f16-b969-4c3d-95c9-e0b032c42fc2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="skipList.c">
@@ -27,13 +33,16 @@
     <ClCompile Include="linkedgraph.c">
       <Filter>리소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="graphBFS.c">
+      <Filter>리소스 파일\BFS/DFS</Filter>
+    </ClCompile>
     <ClCompile Include="graphDFS.c">
-      <Filter>리소스 파일</Filter>
+      <Filter>리소스 파일\BFS/DFS</Filter>
     </ClCompile>
     <ClCompile Include="visitStack.c">
-      <Filter>리소스 파일</Filter>
+      <Filter>리소스 파일\BFS/DFS</Filter>
     </ClCompile>
-    <ClCompile Include="graphBFS.c">
+    <ClCompile Include="single_source_sp.c">
       <Filter>리소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,13 +53,16 @@
     <ClInclude Include="linkedgraph.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="graphBFS.h">
+      <Filter>헤더 파일\BFS/DFS</Filter>
+    </ClInclude>
     <ClInclude Include="graphDFS.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\BFS/DFS</Filter>
     </ClInclude>
     <ClInclude Include="visitStack.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\BFS/DFS</Filter>
     </ClInclude>
-    <ClInclude Include="graphBFS.h">
+    <ClInclude Include="single_source_sp.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
