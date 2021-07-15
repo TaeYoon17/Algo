@@ -45,6 +45,9 @@
     <ClCompile Include="single_source_sp.c">
       <Filter>리소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="all_pairs_sp.c">
+      <Filter>리소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linkedlist.h">
@@ -63,6 +66,9 @@
       <Filter>헤더 파일\BFS/DFS</Filter>
     </ClInclude>
     <ClInclude Include="single_source_sp.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="all_pairs_sp.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

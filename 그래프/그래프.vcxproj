@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="all_pairs_sp.c" />
     <ClCompile Include="graphBFS.c" />
     <ClCompile Include="graphDFS.c" />
     <ClCompile Include="graphMain.c" />
@@ -149,6 +150,7 @@
     <ClCompile Include="visitStack.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="all_pairs_sp.h" />
     <ClInclude Include="graphBFS.h" />
     <ClInclude Include="graphDFS.h" />
     <ClInclude Include="linkedgraph.h" />
