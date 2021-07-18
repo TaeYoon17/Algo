@@ -8,6 +8,7 @@
 typedef struct LinkedGraphType {
 	int graphType;
 	int nodeCount;
+	int edgeCount;
 	LinkedList** ppAdjEdge;
 }LinkedGraph;
 

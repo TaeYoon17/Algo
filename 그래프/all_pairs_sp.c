@@ -24,6 +24,7 @@ int** PathFloyd(LinkedGraph* graph) {
 	int temp = 0;
 	if (graph == NULL) {
 		printf("그래프 오류!!\n");
+		return NULL;
 	}
 	nodeCount = graph->nodeCount;
 	AllDistance = (int**)calloc(sizeof(int*), nodeCount);

@@ -140,21 +140,29 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="all_pairs_sp.c" />
+    <ClCompile Include="grapharrayheap.c" />
     <ClCompile Include="graphBFS.c" />
     <ClCompile Include="graphDFS.c" />
     <ClCompile Include="graphMain.c" />
+    <ClCompile Include="heap.c" />
+    <ClCompile Include="kidneyTree.c" />
     <ClCompile Include="linkedgraph.c" />
     <ClCompile Include="linkedlist.c" />
+    <ClCompile Include="linkedstack.c" />
+    <ClCompile Include="mst_kruskal.c" />
     <ClCompile Include="single_source_sp.c" />
     <ClCompile Include="skipList.c" />
     <ClCompile Include="visitStack.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="all_pairs_sp.h" />
+    <ClInclude Include="grapharrayheap.h" />
     <ClInclude Include="graphBFS.h" />
     <ClInclude Include="graphDFS.h" />
     <ClInclude Include="linkedgraph.h" />
     <ClInclude Include="linkedlist.h" />
+    <ClInclude Include="linkedstack.h" />
+    <ClInclude Include="mst_kruskal.h" />
     <ClInclude Include="single_source_sp.h" />
     <ClInclude Include="visitStack.h" />
   </ItemGroup>

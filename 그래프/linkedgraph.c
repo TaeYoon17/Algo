@@ -17,6 +17,7 @@ LinkedGraph* createLinkedGraph(int type, int size) {
 		}
 		pReturn->graphType = type;
 		pReturn->nodeCount = size;
+		pReturn->edgeCount = 0;
 	}
 	pReturn->ppAdjEdge = (LinkedList**)malloc(sizeof(LinkedList*) * size);
 	if (pReturn->ppAdjEdge == NULL) {
@@ -79,16 +80,20 @@ int removeEdgeInternal(LinkedGraph* graph, int fromNode, int toNode) {
 int addEdge(LinkedGraph* graph, int fromNode, int toNode, int weight) {
 	int ret = -1;
 	ret = addEdgeInternal(graph, fromNode, toNode, weight);
-	if (ret == 0 && graph->graphType == UNDIRECT_TYPE) {
-		ret = addEdgeInternal(graph, toNode, fromNode, weight);
+	if (ret == 0) {
+		graph->edgeCount++;
+		if (graph->graphType == UNDIRECT_TYPE) {
+			ret = addEdgeInternal(graph, toNode, fromNode, weight);
+		}
 	}
 	return ret;
 }
 int removeEdge(LinkedGraph* graph, int fromNode, int toNode) {
 	int ret = 0;
 	ret = removeEdgeInternal(graph, fromNode, toNode);
-	if (ret == 0 && graph->graphType == UNDIRECT_TYPE) {
-		ret = removeEdgeInternal(graph, toNode, fromNode);
+	if (ret == 0) {
+		graph->edgeCount--;
+		if(graph->graphType == UNDIRECT_TYPE) ret = removeEdgeInternal(graph, toNode, fromNode);
 	}
 	return ret;
 }

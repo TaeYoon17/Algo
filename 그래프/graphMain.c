@@ -1,4 +1,4 @@
-#include <stdio.h>
+/*#include <stdio.h>
 #include <stdlib.h>
 #include "linkedgraph.h"
 #include "visitStack.h"
@@ -21,4 +21,4 @@ int main() {
 	//displayGraph(graph);
 	//pResult= PathDijkstra(graph, 0);
 	allPathResult = PathFloyd(graph);
-}
+}*/
