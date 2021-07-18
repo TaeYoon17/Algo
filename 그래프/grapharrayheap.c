@@ -3,6 +3,7 @@
 #include <string.h>
 #include "grapharrayheap.h"
 
+
 ArrayMaxHeap* createArrayMaxHeap(int maxCount)
 {
     ArrayMaxHeap *pReturn = NULL;
