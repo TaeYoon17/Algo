@@ -63,6 +63,9 @@
     <ClCompile Include="linkedstack.c">
       <Filter>리소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="mstPrim.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="linkedlist.h">
@@ -93,6 +96,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="linkedstack.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="mstPrim.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

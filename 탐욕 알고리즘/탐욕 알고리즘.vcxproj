@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{da6d2e92-3748-4590-84c7-5cec8f4a9cad}</ProjectGuid>
-    <RootNamespace>그래프</RootNamespace>
+    <ProjectGuid>{6897d91b-1078-4cba-a843-c10a35aa972f}</ProjectGuid>
+    <RootNamespace>탐욕알고리즘</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,34 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="all_pairs_sp.c" />
-    <ClCompile Include="grapharrayheap.c" />
-    <ClCompile Include="graphBFS.c" />
-    <ClCompile Include="graphDFS.c" />
-    <ClCompile Include="graphMain.c" />
-    <ClCompile Include="heap.c" />
-    <ClCompile Include="kidneyTree.c" />
-    <ClCompile Include="linkedgraph.c" />
-    <ClCompile Include="linkedlist.c" />
-    <ClCompile Include="linkedstack.c" />
-    <ClCompile Include="mstPrim.c" />
-    <ClCompile Include="mst_kruskal.c" />
-    <ClCompile Include="single_source_sp.c" />
-    <ClCompile Include="skipList.c" />
-    <ClCompile Include="visitStack.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="all_pairs_sp.h" />
-    <ClInclude Include="grapharrayheap.h" />
-    <ClInclude Include="graphBFS.h" />
-    <ClInclude Include="graphDFS.h" />
-    <ClInclude Include="linkedgraph.h" />
-    <ClInclude Include="linkedlist.h" />
-    <ClInclude Include="linkedstack.h" />
-    <ClInclude Include="mstPrim.h" />
-    <ClInclude Include="mst_kruskal.h" />
-    <ClInclude Include="single_source_sp.h" />
-    <ClInclude Include="visitStack.h" />
+    <ClCompile Include="소스.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
