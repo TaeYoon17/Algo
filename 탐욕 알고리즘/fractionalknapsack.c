@@ -1,19 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h>
 #include <stdlib.h>
 #include "fractionalknapsack.h"
-
-typedef struct KnapsackItem {
-	char name[100];
-	double weight;
-	double profit;
-	double selected;
-}KnapsackItem;
-
-typedef struct KnapsackType {
-	struct KnapsackItem* items;
-	int item_count;
-	double max_capacity;
-}KnapsackBag;
 
 void displaySortItems(KnapsackItem items[], int count) {
 	int i = 0;

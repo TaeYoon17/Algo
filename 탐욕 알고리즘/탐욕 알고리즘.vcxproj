@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="fractionalknapsack.c" />
+    <ClCompile Include="HuffmanMain.c" />
     <ClCompile Include="소스.c" />
   </ItemGroup>
   <ItemGroup>
