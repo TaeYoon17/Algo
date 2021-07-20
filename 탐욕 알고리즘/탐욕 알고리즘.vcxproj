@@ -139,7 +139,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fractionalknapsack.c" />
     <ClCompile Include="소스.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="fractionalknapsack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
