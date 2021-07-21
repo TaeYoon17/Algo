@@ -1,5 +1,7 @@
+#define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #define MAX_BIT_SIZE 8
 #define COUNT_ASC 128
 
@@ -46,42 +48,56 @@ ArrayMinHeap* createArrayHeap(int count) {
 	return pReturn;
 }
 int isEmptyHeap(ArrayMinHeap *heap){}
-void appendMinHeap(ArrayMinHeap *heap,HeapNode node) {
-	if (heap->maxCount == heap->currentCount) {
+void appendMinHeap(ArrayMinHeap *minHeap,HeapNode node) {
+	if (minHeap->maxCount == minHeap->currentCount) {
 		printf("힙 용량 최대\n");
 		return;
 	}
 	else {
-		heap->currentCount++;
-		int i = heap->currentCount;
-		heap->pData[i] = node;
-		while (0 < i) {
-			if (heap->pData[i].frequency > heap->pData[i / 2].frequency) {
-				HeapNode temp = heap->pData[i];
-				heap->pData[i] = heap->pData[i / 2];
-				heap->pData[i / 2] = temp;
+		minHeap->currentCount++;
+		int i = minHeap->currentCount;
+		minHeap->pData[i] = node;
+		while (1 < i) {
+			if (minHeap->pData[i].frequency < minHeap->pData[i / 2].frequency) {
+				HeapNode temp = minHeap->pData[i];
+				minHeap->pData[i] = minHeap->pData[i / 2];
+				minHeap->pData[i / 2] = temp;
 			}
+			else break;
 			i /= 2;
 		}
 	}
 }
-HeapNode* deleteMinHeap(ArrayMinHeap* heap) {
+void displayMinHeap(ArrayMinHeap* minHeap) {
+	int i = 0;
+	for (i = 0; i <= minHeap->currentCount; i++) {
+		printf("i: %d -> %d ",i, minHeap->pData[i].frequency);
+	}
+}
+HeapNode* deleteMinHeap(ArrayMinHeap* minHeap) {
+	HeapNode* pReturn = NULL;
 	HeapNode* temp = NULL;
-	temp = (HeapNode*)malloc(sizeof(HeapNode));
-	if (heap->currentCount > 0) {
+	if (minHeap->currentCount > 0) {
+		pReturn = (HeapNode*)malloc(sizeof(HeapNode));
 		int parentIdx = 1, childrenIdx = 2;
-		temp = &(heap->pData[parentIdx]);
-		while (childrenIdx < heap->currentCount) {
-			if (heap->pData[childrenIdx].frequency < heap->pData[childrenIdx + 1].frequency) {
+		*pReturn = minHeap->pData[parentIdx];
+		temp = &(minHeap->pData[minHeap->currentCount]);
+		minHeap->currentCount--;
+		while (childrenIdx <= minHeap->currentCount) {
+			if ((childrenIdx<minHeap->currentCount)&&
+				(minHeap->pData[childrenIdx].frequency > minHeap->pData[childrenIdx + 1].frequency)) {
 				childrenIdx++;
 			}
-			heap->pData[parentIdx] = heap->pData[childrenIdx];
+			if (temp->frequency < minHeap->pData[childrenIdx].frequency) {
+				break;
+			}
+			minHeap->pData[parentIdx] = minHeap->pData[childrenIdx];
 			parentIdx = childrenIdx;
 			childrenIdx = childrenIdx * 2;
 		}
-		heap->currentCount--;
+		minHeap->pData[parentIdx] = *temp;
 	}
-	return temp;
+	return pReturn;
 }
 
 HuffmanTreeNode* makeNewHuffmanNode(char data) {
@@ -102,47 +118,76 @@ HuffmanTree* makeHuffmanTree(HuffmanTreeNode* rootNode) {
 	}
 	return pReturn;
 }
-HuffmanTree* buildHuffmanTree(ArrayMinHeap *heap) {
+HuffmanTree* buildHuffmanTree(ArrayMinHeap *minHeap) {
 	HuffmanTree* pReturn = NULL;
 	pReturn = (HuffmanTree*)malloc(sizeof(HuffmanTree));
 	if (pReturn != NULL) {
-		while (heap->currentCount > 0) {
-			HeapNode* left = deleteMinHeap(heap);
-			HeapNode* right = deleteMinHeap(heap);
+		while (minHeap->currentCount > 1) {
+			HeapNode* left = deleteMinHeap(minHeap);
+			HeapNode* right = deleteMinHeap(minHeap);
 			if (left != NULL && right != NULL) {
+				HuffmanTreeNode* HuffLeft = left->pData, * HuffRight = right->pData;
 				HeapNode heapNode = { 0, };
 				HuffmanTreeNode *huffNode=NULL;
 				huffNode = makeNewHuffmanNode("?");
-				huffNode->left = left;
-				huffNode->right = right;
+				huffNode->left = HuffLeft;
+				huffNode->right = HuffRight;
 				heapNode.frequency = left->frequency + right->frequency;
 				heapNode.pData = huffNode;
-				appendMinHeap(heap, heapNode);
+				appendMinHeap(minHeap, heapNode);
 				free(right);
 				free(left);
 			}
 		}
 	}
-	HeapNode* lastNode = deleteMinHeap(heap);
+	HeapNode* lastNode = deleteMinHeap(minHeap);
 	if (lastNode != NULL) {
-		pReturn = makeHuffmanTree(lastNode);
+		pReturn = makeHuffmanTree(lastNode->pData);
 	}
 	return pReturn;
 }
 
-void _recursiveHuffmanTree(HuffmanTreeNode *node,HuffmanCode table[],char code[],int codeIdx){
+void _recursiveHuffmanTree(HuffmanTreeNode *node,HuffmanCode table[],char code[]){
+	char leftCode[2] = "0";
+	char rightCode[2] = "1";
 	if (node->left == NULL && node->right == NULL) {
+		int index = (int)node->data;
+		strcpy(table[index].bitString, code);
+		strcpy(node->bitString, code);
 	}
 	else {
-		if (node->left) _recursiveHuffmanTree(node->left, table,code,codeIdx);
-		if (node->right) _recursiveHuffmanTree(node->right, table,code,codeIdx);
+		if (node->left) {
+			char newCode[100]="";
+			strcat(newCode, code);
+			strcat(newCode, "0");
+			_recursiveHuffmanTree(node->left, table, newCode);
+		}
+		if (node->right) {
+			char newCode[100]="";
+			strcat(newCode, code);
+			strcat(newCode, "1");
+			_recursiveHuffmanTree(node->right, table, newCode);
+		}
 	}
 };
 void applyHuffmanTree(HuffmanTree* tree, HuffmanCode table[]) {
 	HuffmanTreeNode* node = tree->root;
-	char code[100];
-	_recursiveHuffmanTree(node,table,code,0);
+		if (node->left) {
+			char code[100] = "0";
+			_recursiveHuffmanTree(node->left, table, code);
+		}
+		if (node->right) {
+			char code[100] = "1";
+			_recursiveHuffmanTree(node->right, table, code);
+		}
 };
+
+void displayHuffmanCodeArray(HuffmanCode* arr){
+	int i = 0;
+	for (i = 0; i < COUNT_ASC; i++) {
+		printf("idx: %d data: %c frenquency: %d bitString %s\n", i + 1, arr[i].data, arr[i].frequency,arr[i].bitString);
+	}
+}
 
 HuffmanCodeTable* createTable(char str[]) {
 	HuffmanCode* arr;
@@ -158,27 +203,28 @@ HuffmanCodeTable* createTable(char str[]) {
 			arr[idx].frequency++;
 		}
 	}
-	ArrayMinHeap* heap = createArrayHeap(COUNT_ASC);
+	ArrayMinHeap* minHeap = createArrayHeap(COUNT_ASC);
 	for (i = 0; i < COUNT_ASC; i++) {
 		if (arr[i].frequency>0) {
 			HeapNode heapNode = { 0 };
 			heapNode.frequency = arr[i].frequency;
 			heapNode.pData = makeNewHuffmanNode(arr[i].data);
-			appendMinHeap(heap, heapNode);
+			appendMinHeap(minHeap, heapNode);
 		}
 	}
-	HuffmanTree* huffmanTree = buildHuffmanTree(heap);
+	HuffmanTree* huffmanTree = buildHuffmanTree(minHeap);
+	if (huffmanTree == NULL) printf("매우 큰 오류!!");
 	applyHuffmanTree(huffmanTree,arr);
+	displayHuffmanCodeArray(arr);
 	if (pReturn != NULL) {
 		pReturn->idx = arr;
 	}
-	free(heap);
+//	free(heap);
 	return pReturn;
 }
 int main() {
-	char str[100] = "abcde";
-	char* p;
-	HuffmanCodeTable *table=createTable(str);
+	char str[100] = "abcdeaaa";
+	createTable(str);
 
 	return 0;
 }

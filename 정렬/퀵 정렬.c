@@ -1,4 +1,4 @@
-/*#define _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 void print(int value[], int length) {
 	int i = 0;
@@ -35,4 +35,4 @@ int main() {
 	int arr[8] = { 80,75,10,60,15,49,12,25 };
 	quickSort(arr, 0, 7);
 	print(arr, 8);
-}*/
+}

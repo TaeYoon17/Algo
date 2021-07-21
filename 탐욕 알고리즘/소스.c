@@ -7,4 +7,5 @@ int main() {
 	displaySortBag(bag);
 	changeCapacity(bag);
 	return 0;
-}*/
+}
+*/
