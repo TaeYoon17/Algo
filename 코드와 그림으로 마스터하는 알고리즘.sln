@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "그래프", "그래프\그�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "탐욕 알고리즘", "탐욕 알고리즘\탐욕 알고리즘.vcxproj", "{6897D91B-1078-4CBA-A843-C10A35AA972F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "분할정복", "분할정복\분할정복.vcxproj", "{99F9B0F7-E709-467E-9B02-C5BF0F489EC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,16 @@ Global
 		{6897D91B-1078-4CBA-A843-C10A35AA972F}.Release|x64.Build.0 = Release|x64
 		{6897D91B-1078-4CBA-A843-C10A35AA972F}.Release|x86.ActiveCfg = Release|Win32
 		{6897D91B-1078-4CBA-A843-C10A35AA972F}.Release|x86.Build.0 = Release|Win32
+		{99F9B0F7-E709-467E-9B02-C5BF0F489EC6}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{99F9B0F7-E709-467E-9B02-C5BF0F489EC6}.Debug|x64.ActiveCfg = Debug|x64
+		{99F9B0F7-E709-467E-9B02-C5BF0F489EC6}.Debug|x64.Build.0 = Debug|x64
+		{99F9B0F7-E709-467E-9B02-C5BF0F489EC6}.Debug|x86.ActiveCfg = Debug|Win32
+		{99F9B0F7-E709-467E-9B02-C5BF0F489EC6}.Debug|x86.Build.0 = Debug|Win32
+		{99F9B0F7-E709-467E-9B02-C5BF0F489EC6}.Release|Any CPU.ActiveCfg = Release|Win32
+		{99F9B0F7-E709-467E-9B02-C5BF0F489EC6}.Release|x64.ActiveCfg = Release|x64
+		{99F9B0F7-E709-467E-9B02-C5BF0F489EC6}.Release|x64.Build.0 = Release|x64
+		{99F9B0F7-E709-467E-9B02-C5BF0F489EC6}.Release|x86.ActiveCfg = Release|Win32
+		{99F9B0F7-E709-467E-9B02-C5BF0F489EC6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

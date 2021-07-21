@@ -15,31 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="소스.c">
+    <ClCompile Include="closestPath.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="fractionalknapsack.c">
-      <Filter>리소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="HuffmanMain.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="arrayheap.c">
-      <Filter>리소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="huffman.c">
-      <Filter>리소스 파일</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="fractionalknapsack.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="arrayheap.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="huffman.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>
