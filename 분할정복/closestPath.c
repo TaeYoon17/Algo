@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 
 typedef struct _point {
 	int x, y;
@@ -29,7 +30,6 @@ int qPathSortPivot(Point arr[],int start,int end){
 			arr[right] = temp;
 		}
 	}
-	printf("%d %d\n", left, right);
 	temp = arr[pivot];
 	arr[pivot]=arr[left];
 	arr[left]=temp;
@@ -45,29 +45,74 @@ void qPathSortRecur(Point points[],int start,int end){
 void pathSort(Point* points,int count) {
 	qPathSortRecur(points,0,count-1);
 }
-
-int closesetRecur(Point points[],int count) {
-	switch (count) {
-	case 1:
-		break;
-	case 2:
-		break;
-	case 3:
-		break;
-	default:
-		break;
-	}
+float getShortPath(float a, float b) {
+	return a < b ? a : b;
 }
 
-int closestPair(Point points[], int count) {
+float getDistance(Point fromPoints, Point toPoints) {
+	double x = fromPoints.x - toPoints.x;
+	double y = fromPoints.y - toPoints.y;
+	double distance = sqrt(x * x + y * y);
+	return distance;
+}
+float minTwoPoint(Point points[]){
+	return getDistance(points[0], points[1]);
+}
+float minThreePoint(Point points[]){
+	float a = getDistance(points[0], points[1]);
+	float b = getDistance(points[0], points[2]);
+	float c = getDistance(points[1], points[2]);
+	float temp = getShortPath(a, b);
+	return getShortPath(temp, c);
+}
+float closesetRecur(Point points[], int end) {
+	int mid = 0,i;
+	float leftMin, rightMin, width,result=0,midMin;
+	switch (end) {
+	case 0:case 1:
+		return 0;
+	case 2:
+		return minTwoPoint(points);
+	case 3:
+		return minThreePoint(points);
+	default:
+		mid = end / 2;
+		leftMin = closesetRecur(points, mid);
+		rightMin = closesetRecur(points+mid,end-mid);
+		width = getShortPath(leftMin, rightMin);
+		Point *sidePoints = (Point*)malloc(sizeof(Point)*mid);
+		Point midPoint = points[mid];
+		int sideCount = 0;
+		if (sidePoints != NULL) {
+			for (int i = 0; i < end; i++) {
+				if (abs(points[i].x - midPoint.x) < width) {
+					sidePoints[sideCount++] = points[i];
+				}
+			}
+		}
+		else {
+			printf("¿¡·¯!!");
+			return -1;
+		}
+		if (sideCount > 1) {
+			midMin = closestPair(sidePoints, sideCount);
+			result = getShortPath(width, midMin);
+		}
+		else result = width;
+		free(sidePoints);
+		return result;
+	}
+};
+
+float closestPair(Point points[], int count) {
 	pathSort(points, count);
-	return closestRecur(points,count);
+	return closesetRecur(points,count);
 }
 
 int main() {
 	Point points[] = { {2,5},{15,30},{5,2},{15,10},{10,5} };
 
 	int count = sizeof(points) / sizeof(Point);
-
-	int shortest = closestPair(points, count);
+	float shortest = closestPair(points, count);
+	printf("shortest: %f", shortest);
 }
