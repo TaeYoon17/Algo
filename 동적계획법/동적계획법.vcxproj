@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{99f9b0f7-e709-467e-9b02-c5bf0f489ec6}</ProjectGuid>
-    <RootNamespace>분할정복</RootNamespace>
+    <ProjectGuid>{593dc42e-e9ac-4a55-a78d-4c761cfcbf2a}</ProjectGuid>
+    <RootNamespace>동적계획법</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,11 +139,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="closestPath.c" />
-    <ClCompile Include="main.c" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="closest.h" />
+    <ClCompile Include="coinChange.c" />
+    <ClCompile Include="DynamicFibo.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
