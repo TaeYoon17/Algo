@@ -1,11 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct coinItem {
-	int value;
-	int selected;
-}coinItem;
+#include "coinChange.h"
 void displayItems(coinItem items[],int count) {
 	for (int i = 0; i < count; i++) {
 		printf("value: %d", items[i].value);
@@ -32,7 +28,6 @@ coinItem* createItemsInfo(int n) {
 	}
 	return pReturn;
 }
-
 int getChangeDC(coinItem items[],int count,int changeMoney){
 	if (changeMoney <= 0) {
 		return 0;
@@ -52,7 +47,6 @@ int getChangeDC(coinItem items[],int count,int changeMoney){
 		return result;
 	}
 }
-
 int getChangeDP(coinItem items[], int count, int changeMoney){
 	int ret = 0;
 	int *TotalCount = (int*)malloc(sizeof(int) * (changeMoney+1));
@@ -70,23 +64,4 @@ int getChangeDP(coinItem items[], int count, int changeMoney){
 	ret = TotalCount[changeMoney];
 	free(TotalCount);
 	return ret;
-}
-
-int main() {
-	int changeMoney,count;
-	int result = 0;
-	printf("거스름돈은 얼마인가?: ");
-	scanf("%d", &changeMoney);
-	printf("동전의 개수는 몇개인가?: ");
-	scanf("%d", &count);
-	coinItem* items = createItemsInfo(count);
-	//displayItems(items,count);
-	if (items != NULL) {
-		result = getChangeDC(items,count,changeMoney);
-		printf("%d\n", result);
-		result = getChangeDP(items,count,changeMoney);
-		printf("%d", result);
-		free(items);
-	}
-	return 0;
 }

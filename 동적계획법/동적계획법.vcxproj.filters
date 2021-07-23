@@ -18,8 +18,25 @@
     <ClCompile Include="DynamicFibo.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="coinChange.c">
+    <ClCompile Include="changeCoinMain.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="coinChange.c">
+      <Filter>리소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="KnapsackMain.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="zerooneKnapsack.c">
+      <Filter>리소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="coinChange.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="zerooneKnapsack.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

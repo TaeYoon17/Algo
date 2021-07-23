@@ -139,8 +139,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="changeCoinMain.c" />
     <ClCompile Include="coinChange.c" />
     <ClCompile Include="DynamicFibo.c" />
+    <ClCompile Include="zerooneKnapsack.c" />
+    <ClCompile Include="KnapsackMain.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="coinChange.h" />
+    <ClInclude Include="zerooneKnapsack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
