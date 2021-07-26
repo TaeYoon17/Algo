@@ -15,6 +15,7 @@ typedef struct KnapsackType {
 	struct KnapsackItem* items;
 	int item_count;
 	int max_capacity;
+	int now_capacity;
 }KnapsackBag;
 void displaySortItems(KnapsackItem items[], int count);
 void displaySortBag(KnapsackBag* bag);

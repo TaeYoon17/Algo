@@ -7,7 +7,8 @@ void displaySortItems(KnapsackItem items[], int count) {
 	int i = 0;
 	printf("\t이름\t무게\t가치\t비율\n");
 	for (i = 0; i < count; i++) {
-		printf("%d\t%s\t%d\t%d\t%.2f\n", i, items[i].name, items[i].weight, items[i].profit, (items[i].profit / items[i].weight)+0.0);
+		float ratio = (items[i].profit*1.0) / (items[i].weight*1.0);
+		printf("%d\t%s\t%d\t%d\t%.2f\n", i, items[i].name, items[i].weight, items[i].profit, ratio);
 	}
 	return;
 }
@@ -15,26 +16,28 @@ void displaySortBag(KnapsackBag* bag) {
 	displaySortItems(bag->items, bag->item_count);
 	return;
 }
+void freeBag(KnapsackBag* bag) {
+	if (bag != NULL) {
+		free(bag);
+		if (bag->items != NULL)free(bag->items);
+	}
+}
 KnapsackBag* ShallowCopyBag(KnapsackBag* bag) {
 	KnapsackBag* newBag = (KnapsackBag*)malloc(sizeof(KnapsackBag));
-	KnapsackItem* newItem =NULL;
+	KnapsackItem* newItems =NULL;
 	if (newBag != NULL) {
 		newBag->item_count = bag->item_count;
 		newBag->max_capacity = bag->max_capacity;
-		newItem = (KnapsackItem*)malloc(sizeof(KnapsackItem));
-		printf("item_count %d\n",newBag->item_count);
-		if (newItem != NULL) {
-			printf("hello\n");
-			for (int i = 0; i < newBag->item_count; i++) {
-				newItem[i] = bag->items[i];
-				printf("i: %d\n", i);
-			}
+		newBag->now_capacity = bag->now_capacity;
+		newItems = (KnapsackItem*)malloc(sizeof(KnapsackItem)*(newBag->item_count));
+		if (newItems != NULL) {
+			for (int i = 0; i < newBag->item_count; i++) newItems[i] = bag->items[i];
 		}
 		else {
 			printf("isError!!");
 			return NULL;
 		}
-		newBag->items = newItem;
+		newBag->items = newItems;
 	}
 	else {
 		printf("error!!");
@@ -42,29 +45,45 @@ KnapsackBag* ShallowCopyBag(KnapsackBag* bag) {
 	}
 	return newBag;
 }
-void _maxProfit(KnapsackBag* bag, int capacity) {
-	int i = 0;
-	int count = bag->item_count;
-	if (capacity <= 0) {
-		displaySortBag(bag);
-		return;
-	}
-	else {
+void displaySelectedItem(KnapsackBag* bag) {
+	int count=bag->item_count,i=0;
 	for (i = 0; i < count; i++) {
-		KnapsackBag* newBag = ShallowCopyBag(bag);
-		if (newBag->items[i].selected == 0&&newBag->items[i].weight<=capacity) {
-			newBag->items[i].selected = 1;
-			return _maxProfit(newBag, capacity - newBag->items[i].weight);
+		if (bag->items[i].selected == 1) {
+			printf("name: %s profit: %d, weight: %d\n", bag->items[i].name, bag->items[i].profit, bag->items[i].weight);
 		}
 	}
-	free(bag);
+	printf("\n");
+}
+KnapsackBag* _maxProfit(KnapsackBag* bag,int start) {
+	int i = 0,nowCapa=bag->now_capacity;
+	int count = bag->item_count;
+	KnapsackBag* nowBag=bag;
+	if (nowCapa == 0) {
+		return NULL;
+	}
+	else if (nowCapa < 0) {
+		printf("잘 못 됨");
+		return NULL;
+	}
+	else {
+		for (i = start; i < count; i++) {
+			KnapsackBag* newBag = ShallowCopyBag(bag);
+			if (newBag->items[i].selected == 0&&newBag->items[i].weight<=newBag->now_capacity) {
+				newBag->items[i].selected = 1;
+				newBag->now_capacity -= newBag->items[i].weight;
+				KnapsackBag* tempBag=_maxProfit(newBag, i);
+				if (tempBag->now_capacity < nowCapa&&tempBag!=NULL) {
+					nowCapa = tempBag->now_capacity;
+					nowBag = tempBag;
+				}
+			}
+		}
+		return nowBag;
 	}
 }
 void maxProfit(KnapsackBag* bag) {
-	int nowCapacity = bag->max_capacity;
 	KnapsackBag* newBag = ShallowCopyBag(bag);
-	displaySortBag(newBag);
-	//_maxProfit(newBag, nowCapacity);
+	displaySelectedItem(_maxProfit(newBag,0));
 	return;
 }
 
@@ -119,7 +138,7 @@ void quickSortItems(KnapsackItem items[], int start, int end) {
 KnapsackItem* getItems(int count) {
 	KnapsackItem* pReturn = NULL;
 	int i = 0;
-	pReturn = (KnapsackItem*)malloc(sizeof(KnapsackItem));
+	pReturn = (KnapsackItem*)malloc(sizeof(KnapsackItem)*count);
 	if (pReturn != NULL) {
 		for (i = 0; i < count; i++) {
 			int weight, profit;
@@ -154,6 +173,7 @@ KnapsackBag* createBag() {
 	scanf("%d", &count);
 	if (pReturn != NULL) {
 		pReturn->max_capacity = n;
+		pReturn->now_capacity = n;
 		pReturn->item_count = count;
 		KnapsackItem* items = getItems(count);
 		if (items != NULL) pReturn->items = items;
