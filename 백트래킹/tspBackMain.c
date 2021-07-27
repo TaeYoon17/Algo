@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include "tspBackTracking.h"
@@ -13,4 +14,4 @@ int main(void) {
     tsp_Back(costGraph, optimalPath, &minCost);
     printPath(optimalPath);
     return 0;
-}
+}*/
