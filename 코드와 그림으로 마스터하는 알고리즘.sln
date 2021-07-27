@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "분할정복", "분할정�
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "동적계획법", "동적계획법\동적계획법.vcxproj", "{593DC42E-E9AC-4A55-A78D-4C761CFCBF2A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "백트래킹", "백트래킹\백트래킹.vcxproj", "{EA3D2F71-134E-490B-9780-A2BBE4781E96}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,16 @@ Global
 		{593DC42E-E9AC-4A55-A78D-4C761CFCBF2A}.Release|x64.Build.0 = Release|x64
 		{593DC42E-E9AC-4A55-A78D-4C761CFCBF2A}.Release|x86.ActiveCfg = Release|Win32
 		{593DC42E-E9AC-4A55-A78D-4C761CFCBF2A}.Release|x86.Build.0 = Release|Win32
+		{EA3D2F71-134E-490B-9780-A2BBE4781E96}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{EA3D2F71-134E-490B-9780-A2BBE4781E96}.Debug|x64.ActiveCfg = Debug|x64
+		{EA3D2F71-134E-490B-9780-A2BBE4781E96}.Debug|x64.Build.0 = Debug|x64
+		{EA3D2F71-134E-490B-9780-A2BBE4781E96}.Debug|x86.ActiveCfg = Debug|Win32
+		{EA3D2F71-134E-490B-9780-A2BBE4781E96}.Debug|x86.Build.0 = Debug|Win32
+		{EA3D2F71-134E-490B-9780-A2BBE4781E96}.Release|Any CPU.ActiveCfg = Release|Win32
+		{EA3D2F71-134E-490B-9780-A2BBE4781E96}.Release|x64.ActiveCfg = Release|x64
+		{EA3D2F71-134E-490B-9780-A2BBE4781E96}.Release|x64.Build.0 = Release|x64
+		{EA3D2F71-134E-490B-9780-A2BBE4781E96}.Release|x86.ActiveCfg = Release|Win32
+		{EA3D2F71-134E-490B-9780-A2BBE4781E96}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
