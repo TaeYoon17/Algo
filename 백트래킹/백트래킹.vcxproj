@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EightQuuens.c" />
+    <ClCompile Include="mazeBackMain.c" />
     <ClCompile Include="tspBackMain.c" />
     <ClCompile Include="tspBackTracking.c" />
   </ItemGroup>

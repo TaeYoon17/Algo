@@ -1,3 +1,4 @@
+/*
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -52,3 +53,4 @@ int main() {
 	startQueens(grid);
 	return 0;
 }
+*/
