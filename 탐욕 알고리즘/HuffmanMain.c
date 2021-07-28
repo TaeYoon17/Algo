@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "huffman.h"
-
-
 int main() {
 	char str[100] = "abcdeaaa";
 	createTable(str);
